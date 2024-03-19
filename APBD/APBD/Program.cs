@@ -1,3 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿
+using APBD;
 
-Console.WriteLine("Hello, World!");
+var kontener = new Kontener(10, 10, 10, 10);

@@ -7,4 +7,17 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <Compile Remove="IKontener\**" />
+      <Compile Remove="Interfaces.cs" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Remove="IKontener\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="IKontener\**" />
+    </ItemGroup>
+
 </Project>
