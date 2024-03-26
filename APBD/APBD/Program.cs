@@ -31,9 +31,9 @@ kontenery.Add(kontener3);
 
 Kontenerowiec kontenerowiec2 = new Kontenerowiec(50, 5);
 kontenerowiec2.DodajKontenery(kontenery);
-Console.WriteLine(kontenerowiec2.ObliczLacznaMaseLadunku());
+Console.WriteLine($"Łączna masa ładunku na kontenerowcu: {kontenerowiec2.ObliczLacznaMaseLadunku()} kg");
 
 kontenerowiec2.ZastapKontener(kontener2, kontener1);
-Console.WriteLine(kontenerowiec2.ObliczLacznaMaseLadunku());
+Console.WriteLine($"Łączna masa ładunku na kontenerowcu: {kontenerowiec2.ObliczLacznaMaseLadunku()} kg");
 
 kontenerowiec2.Rozladowanie();
