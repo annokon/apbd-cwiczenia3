@@ -11,7 +11,8 @@ public class Kontener : IKontener
     public double glebokosc { get; set; } //w centymetrach
     public string numerSeryjny { get; set; } //KON-C-1
     public double maksymalnaLadownosc { get; set; } //w kilogramach
-    
+    public string typLadunku { get; set; }
+
 
     public Kontener(double wagaWlasna, int wysokosc, double glebokosc, double maksymalnaLadownosc)
     {
@@ -19,16 +20,24 @@ public class Kontener : IKontener
         this.wysokosc = wysokosc;
         this.glebokosc = glebokosc;
         this.maksymalnaLadownosc = maksymalnaLadownosc;
+
+        Random rand = new Random();
+        numerSeryjny = "KON-" + GetType().Name[0] + "-" + rand.Next(1, 1000).ToString("D3");
     }
 
-    public void OproznianieLadunku()
+    public virtual void OproznianieLadunku()
     {
-        throw new NotImplementedException();
+        masaLadunku = 0;
+        typLadunku = null;
     }
 
-    public virtual void ZaladowanieLadunku(int masaLadunku)
+    public virtual void ZaladowanieLadunku(string typLadunku, int masaLadunku)
     {
+        if (masaLadunku > maksymalnaLadownosc)
+        {
+            throw new OverfillException("Przekroczono maksymalną wagę.");
+        }
+
         this.masaLadunku = masaLadunku;
-        throw new OverfillException();
     }
 }

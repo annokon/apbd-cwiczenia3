@@ -3,5 +3,5 @@
 public interface IKontener
 {
     void OproznianieLadunku();
-    void ZaladowanieLadunku(int masaLadunku);
+    void ZaladowanieLadunku(string typLadunku, int masaLadunku);
 }
